@@ -179,6 +179,7 @@ public class ValidationItemControllerV2 {
     @PostMapping("/add")
     public String addItemV5(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
+        //itemValidator를 스프링 빈으로 주입받아서 사용
         itemValidator.validate(item,bindingResult);
         if (bindingResult.hasErrors()) {
             log.info("errors={}", bindingResult);
