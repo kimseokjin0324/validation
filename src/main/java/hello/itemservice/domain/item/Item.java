@@ -17,7 +17,7 @@ public class Item {
      * @Max(9999): 최대 9999까지만 허용한다
      */
     private Long id;
-    @NotBlank
+    @NotBlank(message="공백X")
     private String itemName;
 
     @NotNull
