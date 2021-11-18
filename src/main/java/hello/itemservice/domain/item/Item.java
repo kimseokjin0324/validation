@@ -18,8 +18,9 @@ public class Item {
      * @Range(min=1000,max=100000):범위 안의 값이어야 한다.
      * @Max(9999): 최대 9999까지만 허용한다
      */
+    @NotNull    //-수정 요구사항 추가
     private Long id;
-    @NotBlank(message="공백X")
+    @NotBlank
     private String itemName;
 
     @NotNull
@@ -27,7 +28,7 @@ public class Item {
     private Integer price;
 
     @NotNull
-    @Max(9999)
+//    @Max(9999)    // 수정 요구사항 추가
     private Integer quantity;
 
 
