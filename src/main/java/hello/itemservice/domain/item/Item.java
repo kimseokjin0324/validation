@@ -18,17 +18,17 @@ public class Item {
      * @Range(min=1000,max=100000):범위 안의 값이어야 한다.
      * @Max(9999): 최대 9999까지만 허용한다
      */
-    @NotNull    //-수정 요구사항 추가
+    @NotNull(groups=UpdateCheck.class)    //-수정 요구사항 추가
     private Long id;
-    @NotBlank
+    @NotBlank(groups = {SaveCheck.class,UpdateCheck.class})
     private String itemName;
 
-    @NotNull
-    @Range(min=1000,max=1000000)
+    @NotNull(groups = {SaveCheck.class,UpdateCheck.class})
+    @Range(min=1000,max=1000000,groups = {SaveCheck.class,UpdateCheck.class})
     private Integer price;
 
-    @NotNull
-//    @Max(9999)    // 수정 요구사항 추가
+    @NotNull(groups = {SaveCheck.class,UpdateCheck.class})
+    @Max(value=9999,groups = {SaveCheck.class})    // 수정 요구사항 추가
     private Integer quantity;
 
 
